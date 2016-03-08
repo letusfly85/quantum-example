@@ -7,6 +7,18 @@ config :quantum, cron: [
     "* * * * *": {SampleQuantum, :say_hello}
 ]
 
+config :logger,
+  backends: [{LoggerFileBackend, :info},
+             {LoggerFileBackend, :error}]
+
+config :logger, :info,
+  path: "/var/lib/tools/sample_quantum.log",
+  level: :info
+
+config :logger, :error,
+  path: "/var/lib/tools/sample_quantum_err.log",
+  level: :error
+
 # This configuration is loaded before any dependency and is restricted
 # to this project. If another project depends on this project, this
 # file won't be loaded nor affect the parent project. For this reason,

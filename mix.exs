@@ -31,7 +31,8 @@ defmodule GithubStalking.Mixfile do
   defp deps do
     [
      {:mix_test_watch, "~> 0.2", only: :dev},
-     {:quantum, ">= 1.6.1"}
+     {:quantum, ">= 1.6.1"},
+     {:logger_file_backend, "~> 0.0.6"}
     ]
   end
 end
